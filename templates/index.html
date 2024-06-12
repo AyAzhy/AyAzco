@@ -4,6 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dosya Yükleme</title>
+    <style>
+        /* CSS tasarımı buraya eklenecek */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        li:hover {
+            background-color: #f0f0f0;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>Dosya Yükleme</h1>
@@ -19,7 +60,6 @@
                 {{ file }}
                 <a href="{{ url_for('download_file', filename=file) }}">İndir</a>
                 <a href="{{ url_for('delete_file', filename=file) }}" onclick="return confirm('Bu dosyayı silmek istediğinizden emin misiniz?')">Sil</a>
-
             </li>
         {% endfor %}
     </ul>
